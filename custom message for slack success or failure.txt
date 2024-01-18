@@ -1,0 +1,28 @@
+custom Message for slack success and failure
+
+
+CUSTOM MESSAGE FOR SUCCESS 
+
+hiii,
+
+Build SUCCESS - please find the build status below
+
+Job name - $JOB_NAME
+Build number - $BUILD_NUMBER
+Build URL - $BUILD_URL
+
+Thanks 
+likith
+
+CUSTOM MESSAGE FOR FAILURE
+
+hiii,
+
+Build FAILURE - please find the build status below
+
+Job name - $JOB_NAME
+Build number - $BUILD_NUMBER
+Build URL - $BUILD_URL
+
+Thanks 
+likith
