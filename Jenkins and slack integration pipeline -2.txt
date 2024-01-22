@@ -22,3 +22,16 @@ pipeline {
         }
     }
 }
+
+
+
+post {
+        always {
+            script {
+                slackSend ( 
+                    channel: '#likith', 
+                    message: "please check the details in this 'job-name - ${env.JOB_NAME} Build-no - ${env.BUILD_NUMBER} url - ${BUILD_URL}'"
+                )
+            }
+        }
+    }
