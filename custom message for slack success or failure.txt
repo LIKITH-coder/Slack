@@ -7,9 +7,9 @@ hiii,
 
 Build SUCCESS - please find the build status below
 
-Job name - $JOB_NAME
-Build number - $BUILD_NUMBER
-Build URL - $BUILD_URL
+Job name - ${JOB_NAME}
+Build number - ${BUILD_NUMBER}
+Build URL - ${BUILD_URL}
 
 Thanks 
 likith
@@ -20,9 +20,9 @@ hiii,
 
 Build FAILURE - please find the build status below
 
-Job name - $JOB_NAME
-Build number - $BUILD_NUMBER
-Build URL - $BUILD_URL
+Job name - ${JOB_NAME}
+Build number - ${BUILD_NUMBER}
+Build URL - ${BUILD_URL}
 
 Thanks 
 likith
