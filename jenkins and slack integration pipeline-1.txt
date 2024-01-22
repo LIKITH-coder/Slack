@@ -8,23 +8,24 @@ def COLOR_MAP = [
 ]
 
 pipeline {
-   agent any
-   stages{
-      stage(git) {
-          steps{
-              git 
-          }
-      }
-   post {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+    post {
         always {
             script {
                 slackSend (
-                    channel: '#jenkins-ci',
+                    channel: '#likith',
                     color: COLOR_MAP[currentBuild.currentResult],
-                    message: "please check deatils in '${env.JOB_NAME} ${env.BUILD_NUMBER} ${env.BUILD_URL}'"
+                    message: "please check deatils in 'Build-status - ${currentBuild.currentResult} Job-name - ${env.JOB_NAME} Build-no - ${env.BUILD_NUMBER} url - ${env.BUILD_URL}'"
                 )
            }
        }
    }
-}
 }
