@@ -11,12 +11,14 @@ pipeline {
       }
    }
    
-   post {
-      always {
-         slackSend{
-            channel: '#jenkins-ci',
-            message:"*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}"
-         }
-      }
-   }
+    post {
+        always {
+            script {
+                slackSend(
+                    channel: '#general',
+                    message: "please check deatils in '${env.JOB_NAME} ${env.BUILD_NUMBER} ${env.BUILD_URL}'"
+                )
+            }
+        }
+    }
 }
