@@ -2,36 +2,23 @@ Jenkins and slack integration -2
 
 
 pipeline {
-   agent any
-   stages {
-      stage{
-         steps{
-           echo 'slack notification'
-         }
-      }
-   }
-   
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
     post {
         always {
             script {
-                slackSend(
-                    channel: '#general',
-                    message: "please check deatils in '${env.JOB_NAME} ${env.BUILD_NUMBER} ${env.BUILD_URL}'"
+                slackSend (
+                    channel: '#likith',
+                    message: "please check deatils in 'Build-status - ${currentBuild.currentResult} Job-name - ${env.JOB_NAME} Build-no - ${env.BUILD_NUMBER} url - ${env.BUILD_URL}'"
                 )
-            }
-        }
-    }
+           }
+       }
+   }
 }
-
-
-
-post {
-        always {
-            script {
-                slackSend ( 
-                    channel: '#likith', 
-                    message: "please check the details in this 'job-name - ${env.JOB_NAME} Build-no - ${env.BUILD_NUMBER} url - ${BUILD_URL}'"
-                )
-            }
-        }
-    }
